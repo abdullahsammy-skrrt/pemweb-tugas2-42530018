@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<a href="/" class="btn-back">&larr; Kembali ke Katalog</a>
+
+<div class="detail-box">
+    <img src="<%= menu.foto %>" alt="<%= menu.nama %>">
+    <h2><%= menu.nama %></h2>
+    <p><strong>Kategori:</strong> <%= menu.kategori %></p>
+    <p><strong>Harga:</strong> <%= menu.harga %></p>
+    <p><strong>Deskripsi:</strong> <%= menu.deskripsi %></p>
+</div>
+
+<%- include('partials/footer') %>

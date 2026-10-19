@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<h2>Daftar Menu Kafe</h2>
+
+<div class="filter">
+    <span>Filter Kategori: </span>
+    <a href="/">Semua</a> | 
+    <a href="/?kategori=kopi">Kopi</a> | 
+    <a href="/?kategori=non-kopi">Non-Kopi</a> | 
+    <a href="/?kategori=makanan">Makanan</a>
+</div>
+
+<p>Menampilkan Kategori: <strong><%= kategoriAktif %></strong></p>
+
+<div class="card-grid">
+    <% if (menus.length > 0) { %>
+        <% menus.forEach(item => { %>
+            <div class="card">
+                <img src="<%= item.foto %>" alt="<%= item.nama %>">
+                <h3><%= item.nama %></h3>
+                <p><strong><%= item.harga %></strong></p>
+                <a href="/menu/<%= item.id %>">Lihat Detail</a>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>Menu tidak ditemukan untuk kategori ini.</p>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>
